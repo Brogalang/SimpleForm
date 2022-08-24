@@ -33,7 +33,7 @@ class Register extends BaseController
             ];
           
             $model->save($data);
-            return redirect()->to('/pages/login');
+            return $this->response->redirect(site_url('/login'));
         }else{
             $data['validation'] = $this->validator;
             echo view('/pages/register', $data);

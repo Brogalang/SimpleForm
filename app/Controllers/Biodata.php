@@ -35,9 +35,7 @@ class Biodata extends BaseController
             'cretedtime' => date('Y-m-d H:i:s'),
         ];
         $BiodataModel->insert($datanew);
-        // echo"<pre>";
-        // print_r($datanew);
-        // exit("Warning:");
+       
 
         $PendidikanModel = new PendidikanModel();
         if(is_countable($this->request->getVar('jenjang'))){
@@ -55,7 +53,9 @@ class Biodata extends BaseController
                 $PendidikanModel->insert($data_pendidikan);
             }    
         }
-       
+        echo"<pre>";
+        print_r($data_pendidikan);
+        exit("Warning:");
         $PekerjaanModel = new PekerjaanModel();
         if(is_countable($this->request->getVar('namaperusahaan'))){
             $jumlah2 = count($this->request->getVar('namaperusahaan'));

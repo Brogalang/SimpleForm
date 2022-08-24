@@ -31,7 +31,8 @@ CREATE TABLE `biodata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `biodata` (`userid`, `email`, `nama`, `posisi`, `ktp`, `tempatlahir`, `tgllahir`, `jk`, `agama`, `goldarah`, `status`, `alamat`, `domisili`, `notelp`, `orgterdekat`, `skill`, `lokasitugas`, `penghasilan`, `createdtime`) VALUES
-(0000000003,	'admin2@admin.com',	'Galih',	'PHP Developer',	234242,	'Bekasi',	'1998-12-12',	'LAKI-LAKI',	'Islam',	'O',	'Belum Menikah',	'Bekasi',	'Bekasi',	2222,	'-',	'PHP,Phyton,JavaScaript',	'YA',	7000000,	'2022-08-24 04:55:10');
+(0000000003,	'admin2@admin.com',	'Galih',	'PHP Developer',	234242,	'Bekasi',	'1998-12-12',	'LAKI-LAKI',	'Islam',	'O',	'Belum Menikah',	'Bekasi',	'Bekasi',	2222,	'-',	'PHP,Phyton,JavaScaript',	'YA',	7000000,	'2022-08-24 04:55:10'),
+(0000000006,	'admin3@admin.com',	'Anonim',	'PHP Developer',	111111,	'BEKASI',	'1998-12-12',	'LAKI-LAKI',	'ISLAM',	'O',	'Belum Menikah',	'BEKASI',	'BEKASI',	1111,	'-',	'PHP',	'YA',	9999999,	'0000-00-00 00:00:00');
 
 DROP TABLE IF EXISTS `pendidikan_terakhir`;
 CREATE TABLE `pendidikan_terakhir` (
@@ -42,14 +43,15 @@ CREATE TABLE `pendidikan_terakhir` (
   `tahunlulus` year(4) NOT NULL,
   `ipk` double NOT NULL,
   `createdtime` timestamp NOT NULL ON UPDATE CURRENT_TIMESTAMP,
-  UNIQUE KEY `jenjang` (`jenjang`),
   KEY `userid` (`userid`),
   CONSTRAINT `pendidikan_terakhir_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `biodata` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `pendidikan_terakhir` (`userid`, `jenjang`, `institusi`, `jurusan`, `tahunlulus`, `ipk`, `createdtime`) VALUES
 (0000000003,	'S1',	'UIN',	'TI',	'2020',	3.25,	'0000-00-00 00:00:00'),
-(0000000003,	'SMA',	'SMA',	'IPA',	'2016',	14.25,	'0000-00-00 00:00:00');
+(0000000003,	'SMA',	'SMA',	'IPA',	'2016',	14.25,	'0000-00-00 00:00:00'),
+(0000000006,	'SMA',	'SMA',	'IPA',	'2016',	24.25,	'0000-00-00 00:00:00'),
+(0000000006,	'S1',	'S1',	'TI',	'2020',	3.25,	'0000-00-00 00:00:00');
 
 DROP TABLE IF EXISTS `riwayat_pekerjaan`;
 CREATE TABLE `riwayat_pekerjaan` (
@@ -89,6 +91,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`userid`, `email`, `password`, `role`, `createdtime`) VALUES
 (0000000001,	'admin@admin.com',	'$2y$10$gxhNvrUKafcwbXw4DcN9EO3xYoAJMu7fMJbFykVVfI2jHd4mhllYK',	'admin',	'2022-08-24 02:55:37'),
-(0000000003,	'admin2@admin.com',	'$2y$10$v6sBDmTahrSKtrZhoucaV.8uu3cDWpsPHzdCNTJ01JEbiqD8TBDMi',	'user',	'2022-08-23 16:48:21');
+(0000000003,	'admin2@admin.com',	'$2y$10$v6sBDmTahrSKtrZhoucaV.8uu3cDWpsPHzdCNTJ01JEbiqD8TBDMi',	'user',	'2022-08-23 16:48:21'),
+(0000000006,	'admin3@admin.com',	'$2y$10$ENXgl30rx0SevxPCRDyrBeczxJ0pN1AZuWncsxUm1SBfO3DcXui2e',	'user',	'2022-08-23 17:52:20');
 
--- 2022-08-24 05:02:07
+-- 2022-08-24 05:58:18

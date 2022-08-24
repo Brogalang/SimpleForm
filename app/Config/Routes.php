@@ -67,4 +67,3 @@ $routes->post('update-form', 'Biodata::update');
 
 $routes->get('edit-view/(:num)', 'Dashboard::singleData/$1');
 $routes->get('delete/(:num)', 'Dashboard::delete/$1');
-// $routes->get('edit-view-pendidikan/(:num)/(:num)', 'Dashboard::singleDataPend/$1/$1');
