@@ -53,39 +53,43 @@ class Biodata extends BaseController
                 $PendidikanModel->insert($data_pendidikan);
             }    
         }
-        echo"<pre>";
-        print_r($data_pendidikan);
-        exit("Warning:");
-        $PekerjaanModel = new PekerjaanModel();
-        if(is_countable($this->request->getVar('namaperusahaan'))){
-            $jumlah2 = count($this->request->getVar('namaperusahaan'));
-            for($i=0;$i<$jumlah2;$i++){
-                $data_pekerjaan = array(
-                        'userid'=> $this->request->getVar('userid'),
-                        'namaperusahaan'=> $this->request->getVar('namaperusahaan')[$i],
-                        'posisi_perusahaan'=> $this->request->getVar('posisi_perusahaan')[$i],
-                        'pendapatan'=> $this->request->getVar('pendapatan')[$i],
-                        'tahun_perusahaan'=> $this->request->getVar('tahun_perusahaan')[$i],
-                        'cretedtime'=> date('Y-m-d H:i:s'),
-                    );
-                $PekerjaanModel->insert($data_pekerjaan);
-            }   
-        }
 
         $PelatihanModel = new PelatihanModel();
         if(is_countable($this->request->getVar('kursus'))){
             $jumlah3 = count($this->request->getVar('kursus'));
-            for($i=0;$i<$jumlah3;$i++){
+            for($i3=0;$i3<$jumlah3;$i3++){
                 $data_pelatihan = array(
                         'userid'=> $this->request->getVar('userid'),
-                        'kursus'=> $this->request->getVar('kursus')[$i],
-                        'sertifikat'=> $this->request->getVar('sertifikat')[$i],
-                        'tahun_sertifikat'=> $this->request->getVar('tahun_sertifikat')[$i],
+                        'kursus'=> $this->request->getVar('kursus')[$i3],
+                        'sertifikat'=> $this->request->getVar('sertifikat')[$i3],
+                        'tahun_sertifikat'=> $this->request->getVar('tahun_sertifikat')[$i3],
                         'cretedtime'=> date('Y-m-d H:i:s'),
                     );
                 $PelatihanModel->insert($data_pelatihan);
             }    
         }
+       
+        $PekerjaanModel = new PekerjaanModel();
+        if(is_countable($this->request->getVar('namaperusahaan'))){
+            $jumlah2 = count($this->request->getVar('namaperusahaan'));
+           
+            for($i2=0;$i2<$jumlah2;$i2++){
+                $data_pekerjaan = array(
+                        'userid'=> $this->request->getVar('userid'),
+                        'namaperusahaan'=> $this->request->getVar('namaperusahaan')[$i2],
+                        'posisi_perusahaan'=> $this->request->getVar('posisi_perusahaan')[$i2],
+                        'pendapatan'=> $this->request->getVar('pendapatan')[$i],
+                        'tahun_perusahaan'=> $this->request->getVar('tahun_perusahaan')[$i2],
+                        'cretedtime'=> date('Y-m-d H:i:s'),
+                    );
+                $PekerjaanModel->insert($data_pekerjaan);
+            }   
+        }
+        // echo"<pre>";
+        // print_r($i3);
+        // exit("Warning:");
+
+        
         // echo"<pre>";
         // print_r($jumlah2);
         // exit("Warning:");

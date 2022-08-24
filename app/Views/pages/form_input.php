@@ -120,7 +120,7 @@
                     </tr>
                 </thead>
                 <tbody id="dynamic_field14">
-                <form method="post" name="add_name14" id="add_name14">  
+                <form name="add_name14" id="add_name14">  
                     <tr>  
                         <td><input type="text" style="width:200px" name="jenjang[]" class="form-control" placeholder=""/></td>  
                         <td><input type="text" style="width:200px" name="institusi[]" class="form-control" placeholder=""/></td>  
@@ -147,7 +147,7 @@
                     </tr>
                 </thead>
                 <tbody id="dynamic_field15">
-                <form method="post" name="add_name15" id="add_name15">  
+                <form name="add_name15" id="add_name15">  
                     <tr>  
                         <td><input type="text" style="width:200px" name="kursus[]" class="form-control" placeholder=""/></td>  
                         <td><input type="text" style="width:200px" name="sertifikat[]" class="form-control" placeholder=""/></td>  
@@ -173,7 +173,7 @@
                     </tr>
                 </thead>
                 <tbody id="dynamic_field16">
-                <form method="post" name="add_name16" id="add_name16">  
+                <form name="add_name16" id="add_name16">  
                     <tr id="dynamic_field16">  
                         <td><input type="text" style="width:200px" name="namaperusahaan[]" class="form-control" placeholder=""/></td>  
                         <td><input type="text" style="width:200px" name="posisi_perusahaan[]" class="form-control" placeholder=""/></td>  

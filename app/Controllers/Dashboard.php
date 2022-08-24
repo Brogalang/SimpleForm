@@ -44,7 +44,7 @@ class Dashboard extends BaseController
         }
     }
     public function singleDataPend($id = null,$jenjang= null){
-        exit("Warning");
+        // exit("Warning");
         $session = session();
         $UserModel = new UserModel();
         $PendidikanModel = new PendidikanModel();
